@@ -7,4 +7,7 @@ services:
     environment:
       - CASSANDRA_START_RPC=true
     volumes:
-      - ./data/cassandra:/var/lib/cassandra
+      - data_volume:/var/lib/cassandra
+
+volumes:
+    data_volume:
