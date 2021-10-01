@@ -1,13 +1,15 @@
 version: "2"
 services:
   cassandra:
-    image: cassandra:3.11
+    image: cassandra:4.0.1
     ports:
       - "9042:9042"
     environment:
       - CASSANDRA_START_RPC=true
     volumes:
       - data_volume:/var/lib/cassandra
+      - ./conf/cassandra.yaml:/etc/cassandra/cassandra.yaml
 
 volumes:
     data_volume:
+    
